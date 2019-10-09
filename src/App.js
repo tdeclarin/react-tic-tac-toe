@@ -7,6 +7,9 @@ class App extends Component {
   };
 
   clickHandler(e) {
+    // this.setState({prevState =>{
+
+    // }})
     console.log(e.target);
   }
 
