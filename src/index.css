@@ -51,16 +51,20 @@ ul {
 } */
 .board {
   border: solid 3px black;
-  height: 400px;
-  width: 400px;
-  display: flex;
-  flex-direction: row;
+  height: 350px;
+  width: 350px;
   text-align: center;
+
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 
 .box {
   border: solid 2px black;
-  height: 130px;
-  width: 130px;
-  margin: auto;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  padding: 0;
+}
+.title {
 }
