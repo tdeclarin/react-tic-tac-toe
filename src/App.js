@@ -1,18 +1,32 @@
 import React, { Component } from "react";
 import Board from "./Components/Board";
+import Logistics from "./Components/Logistics";
 
 class App extends Component {
   state = {
-    boxValue: Array.from({ length: 9 })
+    boxValue: Array.from({ length: 9 }),
+    player: "X"
   };
 
-  clickHandler(e) {
-    // this.setState({prevState =>{
-
-    // }})
-    console.log(e.target);
+  clickHandler(index) {
+    let updatedBoard = this.state.boxValue;
+    if (this.state.boxValue[index] === undefined) {
+      updatedBoard[index] = this.state.player;
+      let nextPlayer = this.state.player === "X" ? "O" : "X";
+      this.setState({
+        boxValue: updatedBoard,
+        player: nextPlayer
+      });
+      this.checkForWin();
+    }
   }
-
+  checkForWin() {}
+  newGame() {
+    this.setState({
+      boxValue: Array.from({ length: 9 }),
+      player: "X"
+    });
+  }
   render() {
     return (
       <div>
@@ -21,8 +35,9 @@ class App extends Component {
         </div>
         <Board
           playerMove={this.state.boxValue}
-          clickHandler={this.clickHandler}
+          clickHandler={this.clickHandler.bind(this)}
         />
+        <Logistics currentPlayer={this.state.player} />
       </div>
     );
   }
