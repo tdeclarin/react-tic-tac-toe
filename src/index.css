@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Patrick+Hand&display=swap");
+
+.container {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
 
 .board {
   border: solid 3px black;
   height: 312px;
   width: 312px;
   text-align: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: inline-flex;
   flex-wrap: wrap;
 }
-
 .box {
   border: solid 2px black;
   height: 100px;
@@ -17,7 +23,23 @@
   margin: 0;
   padding: 0;
 }
+.box h1 {
+  font-family: "Permanent Marker", cursive;
+}
 .title {
   font-family: "Permanent Marker", cursive;
-  color: #ffa500;
+  color: #ff8800;
+}
+
+.logistics h1 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+}
+.new-game-btn {
+  font-size: 1.5rem;
+  padding: 10px 120px 10px 120px;
+  font-family: "Patrick Hand", cursive;
+  border-radius: 10px;
+  border: solid 1px black;
+  background-color: #ff8800;
 }
