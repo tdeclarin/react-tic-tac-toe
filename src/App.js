@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import Board from "./Components/Board";
 import Logistics from "./Components/Logistics";
+import styled from "styled-components";
 // Expand to 10 x 10
 const noop = () => {};
-
+const Title = styled.h1`
+  font-family: "Permanent Marker", cursive;
+  color: #ff8800;
+`;
 class App extends Component {
   state = {
     // Sets an array with 9 null items
@@ -60,6 +64,7 @@ class App extends Component {
       }
     }
   }
+
   // Clears the board and restores original state
   newGame() {
     this.setState({
@@ -68,12 +73,11 @@ class App extends Component {
       gameWinner: null
     });
   }
+
   render() {
     return (
       <div className="container">
-        <div className="title">
-          <h1>Tic-Tac-Toe</h1>
-        </div>
+        <Title>Tic-Tac-Toe</Title>
         <Board
           playerMove={this.state.boxValue}
           clickHandler={
